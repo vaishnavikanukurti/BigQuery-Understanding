@@ -1,0 +1,29 @@
+1) To obtain crime data for 100 data points
+select * from  `bigquery-public-data.austin_crime.crime` limit 100
+
+2) To obtain crime data where the clearance status is not cleared 
+#select* from  `bigquery-public-data.austin_crime.crime` where clearance_status="Not cleared"
+
+3) To obtain crime data where the clearance status is not cleared ordered based on descending 
+#select* from  `bigquery-public-data.austin_crime.crime` where clearance_status="Not cleared" order by address desc
+
+4)To obtain crime data where the clearance status is not cleared and occured after the year 2015
+#select* from  `bigquery-public-data.austin_crime.crime` where clearance_status="Not cleared" and year > 2015
+
+5) To obtain crime data where the clearance status is not cleared and occured after the year 2015 and ordered based on districts in ascending order
+#select* from  `bigquery-public-data.austin_crime.crime` where clearance_status="Not cleared" and year > 2015 order by district asc
+
+6)To obtain crime data based on description and the clearance status is not cleared and occured after the year 2015
+#select description from `bigquery-public-data.austin_crime.crime` where clearance_status="Not cleared" and year > 2015
+
+7)To obtain crime data based on description and the clearance status is not cleared and occured after the year 2015 and groubed based on description
+#select description from `bigquery-public-data.austin_crime.crime` where clearance_status="Not cleared" and year > 2015 group by description
+
+8) To obtain crime data based on census tract in the range of 18.4 - 25
+#select census_tract from `bigquery-public-data.austin_crime.crime` where census_tract between 18.4 and 25
+
+9)counting the primary type of crime 
+#select count (primary_type) from  `bigquery-public-data.austin_crime.crime` 
+
+10) which is the maximum value of the x coordinate from the crime data base
+select max (x_coordinate) from  `bigquery-public-data.austin_crime.crime`
